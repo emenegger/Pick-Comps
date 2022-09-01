@@ -1,0 +1,193 @@
+$primary: #0077FF
+$dark: #000
+$offwhite: #EDFDFF
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px
+
+// Small tablets (portrait view)
+$screen-md-min: 768px
+
+// Tablets and small desktops
+$screen-lg-min: 992px
+
+// Large tablets and desktops
+$screen-xl-min: 1200px
+
+// Small devices
+@mixin sm 
+   @media (min-width: #{$screen-sm-min}) 
+       @content
+   
+// Medium devices
+@mixin md 
+   @media (min-width: #{$screen-md-min}) 
+       @content
+   
+// Large devices
+@mixin lg 
+   @media (min-width: #{$screen-lg-min}) 
+       @content
+   
+// Extra large devices
+@mixin xl 
+   @media (min-width: #{$screen-xl-min}) 
+       @content
+   
+
+
+
+body
+  height: 100vh
+  display: grid
+  font-family: Roboto
+  -webkit-text-size-adjust: 100%
+  -webkit-font-smoothing: antialiased
+  width: vmax
+  
+*
+  box-sizing: border-box
+
+
+#header-1
+  color: rgba($dark,.5)
+  color: white
+
+.player-comp 
+  display: flex
+  flex-direction: column
+  align-items: center
+  // margin-bottom: 30px
+  // border: solid white
+  background-image: url('https://images.unsplash.com/photo-1544429156-be53d99d8181?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
+  // background-image: url('https://images.unsplash.com/photo-1627626167340-308bd1e28191?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')
+  font-family: 'Manrope', sans-serif
+  background-repeat: no-repeat
+  // transform: rotate(270deg)
+  // width: 1000px
+  transition: width ease-in-out
+  @include sm 
+    min-width: $screen-sm-min
+  @include md
+    min-width: $screen-md-min
+  @include lg
+    min-width: $screen-lg-min
+  @include xl
+    min-width: $screen-xl-min
+  
+
+#player-comp-container 
+  // background-image: url('https://images.unsplash.com/flagged/photo-1556554946-c10ef755bded?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80')
+  // background-image: url('https://images.unsplash.com/photo-1595795279832-13f0df36fbb9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80')
+  // background-image: url('https://images.unsplash.com/photo-1592436426550-47820354cb54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80')
+  // background-image: url('https://images.unsplash.com/photo-1567748533476-e888991983ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80')
+  // background-image: url('https://images.unsplash.com/photo-1541915803885-12f5c95b1669?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80')
+  // background-image: url('https://images.unsplash.com/photo-1544429156-be53d99d8181?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
+  // background-repeat: no-repeat
+  width: vmax
+  display: flex
+  flex-direction: column
+  align-items: center
+  // transform: rotate(90deg)
+
+.btn
+  margin-top: 10px 
+  display: flex
+  max-width: 280px
+  border-radius: 10px
+  overflow: hidden
+  width: 100%
+  font-family: 'Manrope', sans-serif
+  font-weight: 500
+  // transform-origin: 0 0
+  // transform: translate3d(0,0,0)
+  // transition: all .2s ease
+  // pointer-events: none
+  // opacity: .2
+  background-color: transparent
+  border: solid rgba($dark, 0.25)
+  color: lightgray
+  height: 56px
+  font-size: 16px
+  align-items: center
+  justify-content: center
+  margin-bottom: 20px
+
+  &:hover 
+    transform: scale(1.05) 
+    background-color: rgba($dark, 0.1)
+
+
+  &:active 
+    transform: scale(0.9)
+  // box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24)
+
+
+.inp
+  position: relative
+  margin: auto
+  width: 100%
+  max-width: 280px
+  border-radius: 10px
+  overflow: hidden
+
+  .label
+    position: absolute
+    top: 20px
+    left: 12px
+    font-size: 16px
+    // color: rgba($dark,.5)
+    color: white
+    font-weight: 500
+    transform-origin: 0 0
+    transform: translate3d(0,0,0)
+    transition: all .2s ease
+    pointer-events: none
+
+  .focus-bg
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba($dark,.05)
+    z-index: -1
+    transform: scaleX(0)
+    transform-origin: left
+
+  input
+    -webkit-appearance: none
+    appearance: none
+    width: 100%
+    border: 0
+    font-family: inherit
+    padding: 16px 12px 0 12px
+    height: 56px
+    font-size: 16px
+    font-weight: 400
+    background: rgba($dark,.02)
+    box-shadow: inset 0 -1px 0 rgba($dark,.3)
+    // color: $dark
+    color: white
+    transition: all .15s ease
+
+    &:hover
+      background: rgba($dark,.04)
+      box-shadow: inset 0 -1px 0 rgba($dark,.5)
+    
+    &:not(:placeholder-shown)
+      + .label
+        color: rgba($offwhite, 0.7)
+        // color: gray
+        transform: translate3d(0,-12px,0) scale(.75)
+    
+    &:focus
+      background: rgba($dark,.05)
+      outline: none
+      box-shadow: inset 0 -2px 0 $primary
+      + .label
+        color: $primary
+        transform: translate3d(0,-12px,0) scale(.75)
+        + .focus-bg
+          transform: scaleX(1)
+          transition: all .1s ease
